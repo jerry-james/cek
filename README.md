@@ -24,7 +24,7 @@ The CkPair is a *closure-continuation* pairing.  The machine is defined as a set
 
 ## 1.2. Class Diagram ##
 
-![](img/env-class-diagram.gif)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/env-class-diagram.gif)
 
 ## 1.3. "Ident" Example ##
 
@@ -47,7 +47,7 @@ CkPair       ck = new CkPair(c, k);
 
 I use single letter variable names, but I'm consistent and there are a small number of them.  Here is a complete table of the variable naming conventions. Short variable names are important when you want a lot of content to fit in one page. They tie back to mathematical definitions of the CEK machine.
 
-![](img/variable-conventions.png)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/variable-conventions.png)
 
 ## 1.5. Code ##
 
@@ -90,7 +90,7 @@ I'll walk you through each step of the CEK machine as it evaluates the "ident" e
 
 Here is how the mathematical expressions correlate to the java code.
 
-![](img/ckpair.gif)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/ckpair.gif)
 
 
 
@@ -98,7 +98,7 @@ Here is how the mathematical expressions correlate to the java code.
 
 
 
-![](/img/cek1-ident.png)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/cek1-ident.png)
 
 *Top: Reduction relation as implemented in the java source code.  Bottom: The reduction relation filled in with our example expression.*
 
@@ -152,7 +152,7 @@ final public class Cek1 implements ReductionRelation {
 
 ### 1.6.2. Cek4 ###
 
-![](img/cek4-ident.png)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/cek4-ident.png)
 
 `Cek4` reduces `Value` expressions that have an argument continuation of type `ArContinuation`.  The `Closure` is pushed to the `Continuation` stack, and the `Closure` in the `ArContinuation` is moved to the `Expression` position of the `CkPair`.
 
@@ -200,7 +200,7 @@ final public class Cek4 implements ReductionRelation {
 
 ### 1.6.3. Cek3 ###
 
- ![](img/cek3-ident.png)
+ ![](https://raw.githubusercontent.com/jerry-james/cek/master/img/cek3-ident.png)
 
 `Cek3` reduces `value` expressions that aren't `Variable`s and have a function continuation of type `FnContinuation`.  In other words, `Cek3` evaluates the expression `M` in an extended `Environment`.  In the "ident" example, this means that the variable `x` is associated with the value 1.  This is a single step reduction though, so only one thing can happen at a time.  The evaluator cannot directly place the value 1 into the `Expression` position of the `CkPair`.
 
@@ -254,7 +254,7 @@ final public class Cek3 implements ReductionRelation {
 
 ### 1.6.4. Cek7 ###
 
- ![](img/cek7-ident.png)
+ ![](https://raw.githubusercontent.com/jerry-james/cek/master/img/cek7-ident.png)
 
 Cek7 reduces variable expressions to a closure, or false if the variable isn't in the environment.
 
@@ -292,10 +292,10 @@ final public class Cek7 implements ReductionRelation {
 This is where the machine stops! There is no way to reduce the ```CkPair``` returned by Cek7, so it is the result.
 
 # Complete CEK Definition #
-![](img/eval-cek.gif)
-![](img/cek-complete.gif)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/eval-cek.gif)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/cek-complete.gif)
 # Road-map #
-![](img/roadmap.gif)
+![](https://raw.githubusercontent.com/jerry-james/cek/master/img/roadmap.gif)
 # References #
 
 [1]	C. Queinnec, LISP in small pieces. Cambridge England ; New York, NY, USA: Cambridge University Press, 1996, pp. xx, 514 p.
