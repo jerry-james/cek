@@ -1,15 +1,6 @@
 # The CEK Abstract Register Machine #
 
-This passage from the preface of *Lisp in small pieces*[1] resonates with me in general, and I think it is applicable here.
-
-> There are subjects treated here that can be appreciated only if you make an effort proportional
-> to their innate difficulty. to harken back to something like the language of courtly love in
-> medieval France, there are certain objects of our affection that reveal their beauty and charm
-> only when we make a chivalrous but determined assault on their defenses; they remain impregnable
-> if we don't lay siege to the fortress of their inherent complexity.
-
 The development and proof of The CEK Machine is provided in [2].
-
 
 ## 1.1. Overview ##
 My intent here is to describe the following class diagram in plain English.  *Italic* words are semantics engineering jargon and may have different meanings than you're familiar with.  Don't worry too much about the meaning of the words right now.
