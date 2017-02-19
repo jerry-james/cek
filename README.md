@@ -53,7 +53,7 @@ I use single letter variable names, but I'm consistent and there are a small num
 
 Clone the repo, Run this example!!
 
-fyi/jerry/cek/example/Identity.java
+https://github.com/jerry-james/cek/blob/master/src/main/java/fyi/jerry/cek/example/Identity.java
 
 You should see something like this output on the command line:
 
