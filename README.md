@@ -87,9 +87,7 @@ Here is how the mathematical expressions correlate to the java code.
 
 ### 1.6.1. Cek1 ###
 
-
-https://github.com/jerry-james/cek/blob/master/img/cek1-ident.png?raw=true
-![](https://github.com/jerry-james/cek/blob/master/img/cek1-ident.png?raw=true)
+![](https://github.com/jerry-james/cek/blob/master/img/cek1-ident.png)
 
 *Top: Reduction relation as implemented in the java source code.  Bottom: The reduction relation filled in with our example expression.*
 
