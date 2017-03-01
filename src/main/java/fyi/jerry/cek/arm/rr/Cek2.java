@@ -30,10 +30,10 @@ final public class Cek2 implements ReductionRelation {
             Environment  e = c.getE();
             Continuation k = p.getK();
             
-            PrimopExpression           m0 = (PrimopExpression) c.getM();
-            Primop                     op = m0.getO();
-            Expression                 m1 = m0.getM();
-            List<? extends Expression> nn = m0.getN();
+            PrimopExpression m0 = (PrimopExpression) c.getM();
+            Primop           op = m0.getO();
+            Expression       m1 = m0.getM();
+            List<Expression> nn = m0.getN();
 
             Closure        cm = new Closure(m1, e);
             List<Closure>  cc = nn.stream().map(e1 -> new Closure(e1, e)).collect(Collectors.toList());
