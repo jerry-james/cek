@@ -1,7 +1,6 @@
 package fyi.jerry.cek.lang.expr.ffi;
 
 import fyi.jerry.cek.lang.expr.Expression;
-import fyi.jerry.cek.lang.expr.ffi.Primop;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,7 +23,7 @@ final public class PrimopExpression implements Expression {
         return m;
     }
 
-    public List<? extends Expression> getN() {
+    public List<Expression> getN() {
         return Collections.unmodifiableList(n);
     }
 
