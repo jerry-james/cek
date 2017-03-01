@@ -22,7 +22,7 @@ The CkPair is a *closure-continuation* pairing.  The machine is defined as a set
 Here's an example of how a `CkPair` instance is created. In English first, then java. Java has variables, so does the CEK machine. I define a `Variable`  `"x"`, then define a `Lambda` function called `ident`; which simply returns its input.  Then I define a primitive `IntegerValue` of `1`.  A `Combination` is another way to talk about function application.  It means I'm applying the function `ident` to the argument `v`. E.g. if `ident(x) = x`, then `ident(1) = 1`.  The `Environment` is `NULL` because our expression is already complete, we don't need any additional `Variable` definitions.  I create a `Closure` with the `Combination` and `NULL` environment, and a `CkPair` with the `Closure` and `Continuation`.  The `MT` continuation is pronounced "empty".
 
 ```java
-Variable       x = new Variable("x");
+Variable      x = new Variable("x");
 
 Lambda    ident = new Lambda(x, x);   
 IntegerValue  v = new IntegerValue(1);
@@ -67,9 +67,7 @@ Here it is again, this time I've manually formatted it to make it easier to see 
 =cek7=> ((1           ())           mt)
 ```
 
-
 The rest of the tutorial will step through the evaluation of the expression from the "ident" example. Only CEK1, CEK4, CEK3, and CEK7 are needed for this reduction.
-
 
 ## 1.6. Reduction Relations ##
 
@@ -83,11 +81,7 @@ Here is how the mathematical expressions correlate to the java code.
 
 ![](https://raw.githubusercontent.com/jerry-james/cek/master/img/ckpair.gif)
 
-
-
 ### 1.6.1. Cek1 ###
-
-
 
 ![](https://raw.githubusercontent.com/jerry-james/cek/master/img/cek1-ident.png)
 
@@ -98,8 +92,8 @@ Cek1 reduces combination expressions.  Lets look at the M and N terms both befor
 
 |**Term** | **Before Reduction**| **After Reduction**|
 |---------|---------------------|--------------------|
-| `M`       | `M` is in the function position of the `Combination` in the expression of the `CkPair`. | `M` is in the `Expression` position of the `CkPair`. |
-| `N`       | `N` is in the argument position of the `Combination`.                   | `N` is pushed to the `Continuation` stack.         |
+| `M`     | `M` is in the function position of the `Combination` in the expression of the `CkPair`. | `M` is in the `Expression` position of the `CkPair`. |
+| `N`     | `N` is in the argument position of the `Combination`.                   | `N` is pushed to the `Continuation` stack.         |
 
 
 ```java
