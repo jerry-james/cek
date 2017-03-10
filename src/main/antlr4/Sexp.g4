@@ -4,6 +4,7 @@ sexps : sexp* EOF;
 
 sexp : vardefn | fundefn | atom | list ;
 
+// this grammar has an error, its obviously incorrect to allow a vardefn or fundefn form in the body of a vardefn
 vardefn : '(' 'define' SYMBOL sexp ')';
 fundefn : '(' 'define' '(' fundefnsymbol SYMBOL* ')' sexp* ')';
 
