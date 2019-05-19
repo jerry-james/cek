@@ -28,5 +28,8 @@ final public class CkPair {
     public String toString() {
         return String.format("(%s %s)",c,k);//<"+c+","+k+">";
     }
-    
+
+    <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forCkPair(c, k);
+    }
 }

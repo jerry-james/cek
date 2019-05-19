@@ -1,5 +1,6 @@
 package fyi.jerry.cek.lang.expr.value;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.lang.expr.Expression;
 import java.util.Objects;
 import org.slf4j.Logger;
@@ -51,6 +52,9 @@ final public class Variable implements Value<Variable>, Expression {
         return this;
     }
 
-    
-    
+
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forVariable(name);
+    }
 }

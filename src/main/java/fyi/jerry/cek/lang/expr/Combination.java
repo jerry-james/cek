@@ -1,5 +1,7 @@
 package fyi.jerry.cek.lang.expr;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
+
 /** Applies the expression M to parameter N. E.g. (M N)
  * 
  * @author jerry
@@ -24,5 +26,10 @@ public class Combination implements Expression {
     @Override
     public String toString() {
         return "("+m+" "+n+")";
+    }
+
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forCombination(m, n);
     }
 }

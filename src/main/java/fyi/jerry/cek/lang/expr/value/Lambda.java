@@ -1,5 +1,6 @@
 package fyi.jerry.cek.lang.expr.value;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.lang.expr.Expression;
 
 /** Represents Lambda expressions.
@@ -32,5 +33,9 @@ public class Lambda implements Expression, Value<String> {
     public String toString() {
         return String.format("(L %s %s)",x,m);
     }
-    
+
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forLambda(x, m);
+    }
 }

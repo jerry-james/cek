@@ -1,5 +1,6 @@
 package fyi.jerry.cek.continuation;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,5 +15,9 @@ final public class EmptyContinuation implements Continuation {
     public String toString() {
         return "mt";
     }
-    
+
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forEmptyContinuation();
+    }
 }

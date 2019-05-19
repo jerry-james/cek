@@ -1,5 +1,6 @@
 package fyi.jerry.cek.continuation;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.env.Closure;
 import fyi.jerry.cek.lang.expr.ffi.Primop;
 import fyi.jerry.cek.lang.expr.value.PrimitiveValue;
@@ -53,7 +54,10 @@ final public class OpContinuation implements Continuation {
     public String toString() {
         return String.format("(op (%s) (%s) %k)",cm,cl,k);
     }
-    
-    
-    
+
+
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forOpContinuation(o, cm, cl, k);
+    }
 }

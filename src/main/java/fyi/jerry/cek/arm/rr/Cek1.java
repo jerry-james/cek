@@ -15,7 +15,7 @@ final public class Cek1 implements ReductionRelation {
     
     @Override
     public boolean reducable(CkPair p) {
-        return p.getC().getM() instanceof Combination;
+        return p.accept(new IsClosureExpressionACombination());
     }
     
     @Override

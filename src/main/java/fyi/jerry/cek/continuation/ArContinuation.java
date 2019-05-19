@@ -1,5 +1,6 @@
 package fyi.jerry.cek.continuation;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.env.Closure;
 import fyi.jerry.cek.env.Environment;
 import fyi.jerry.cek.lang.expr.Expression;
@@ -46,4 +47,8 @@ public class ArContinuation implements Continuation {
         return String.format("(ar (%s (%s)) %s)",n,e,k);
     }
 
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forArContinuation(n, e, k);
+    }
 }

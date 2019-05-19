@@ -1,5 +1,6 @@
 package fyi.jerry.cek.continuation;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.env.Closure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,4 +31,8 @@ final public class FnContinuation implements Continuation {
         return String.format("(fn %s %s)",c,k);
     }
 
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forFnContinuation(c, k);
+    }
 }

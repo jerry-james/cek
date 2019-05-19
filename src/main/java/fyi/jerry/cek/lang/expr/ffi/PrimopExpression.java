@@ -1,5 +1,6 @@
 package fyi.jerry.cek.lang.expr.ffi;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.lang.expr.Expression;
 import java.util.Collections;
 import java.util.List;
@@ -29,5 +30,10 @@ final public class PrimopExpression implements Expression {
 
     public Primop getO() {
         return o;
+    }
+
+    @Override
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forPrimopExpression(o, m, n);
     }
 }

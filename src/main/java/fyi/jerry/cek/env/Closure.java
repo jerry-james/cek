@@ -1,5 +1,6 @@
 package fyi.jerry.cek.env;
 
+import fyi.jerry.cek.arm.rr.CkPairVisitor;
 import fyi.jerry.cek.lang.expr.Expression;
 
 /** An Expression-Environment Pair.
@@ -29,4 +30,7 @@ public class Closure {
         return String.format("(%s (%s))",m,e);
     }
 
+    public <T> T accept(CkPairVisitor<T> ask) {
+        return ask.forClosure(m, e);
+    }
 }
