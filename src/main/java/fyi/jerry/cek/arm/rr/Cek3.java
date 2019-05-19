@@ -17,10 +17,14 @@ final public class Cek3 implements ReductionRelation {
 
     @Override
     public boolean reducable(CkPair p) {
-        return       p.getC().getM() instanceof Value
+        return       isClosureExpressionAValue(p)
                 && !(p.getC().getM() instanceof Variable)
                 &&   p.getK()        instanceof FnContinuation
                 && ((FnContinuation)p.getK()).getC().getM() instanceof Lambda;
+    }
+
+    private boolean isClosureExpressionAValue(CkPair p) {
+        return p.accept(new IsClosureExpressionAValue());
     }
 
     @Override
