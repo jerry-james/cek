@@ -8,7 +8,7 @@ import fyi.jerry.cek.lang.expr.ffi.Primop;
 import fyi.jerry.cek.lang.expr.value.Variable;
 import java.util.List;
 
-public class IsClosureExpressionACombination implements CkPairVisitor<Boolean> {
+public class IsClosureExpressionACombination extends DefaultCkPairVisitor<Boolean> {
 
     @Override
     public Boolean forVariable(String name) {
@@ -33,26 +33,6 @@ public class IsClosureExpressionACombination implements CkPairVisitor<Boolean> {
     @Override
     public Boolean forCombination(Expression m, Expression n) {
         return true;
-    }
-
-    @Override
-    public Boolean forArContinuation(Expression n, Environment e, Continuation k) {
-        throw new IllegalStateException();
-    }
-
-    @Override
-    public Boolean forOpContinuation(Primop o, List<Closure> cm, List<Closure> cl, Continuation k) {
-        throw new IllegalStateException();
-    }
-
-    @Override
-    public Boolean forFnContinuation(Closure c, Continuation k) {
-        throw new IllegalStateException();
-    }
-
-    @Override
-    public Boolean forEmptyContinuation() {
-        throw new IllegalStateException();
     }
 
     @Override
