@@ -19,7 +19,7 @@ public class Cek extends ARMachine {
     public static void stepEvaluator(CkPair p) {
         ServiceLoader<ReductionRelation> rr = ServiceLoader.load(ReductionRelation.class);
         List<ReductionRelation> rrs = new LinkedList<>();
-        rr.forEach((ReductionRelation t) -> rrs.add(t));
+        rr.forEach(rrs::add);
         CkPair current = p;
         System.out.println(current);
         while(true) {
